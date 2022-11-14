@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap");
+
+:root {
+  --main-color: white;
+  --main-bg-color: black;
+  --invert-color: black;
+  --invert-bg-color: white;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+body {
+  /* width: 100vw; */
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--main-color);
+  background-color: var(--main-bg-color);
+}
+header {
+  width: 100%;
+  height: 60px;
+  background-color: var(--invert-bg-color);
+  color: var(--invert-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  transition: all 0.5s ease;
+
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+h1 {
+  font-family: "Lobster", cursive;
+  cursor: pointer;
+}
+header a {
+  text-decoration: none;
+  color: var(--invert-color);
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+.btn {
+  width: fit-content;
+  box-shadow: inset 0 0 0 0;
+  transition: all 0.2s ease;
+  padding: 5px;
+}
+ul .btn:hover {
+  box-shadow: inset 100px 0 0 0 rgba(205, 50, 50, 0.5) !important;
+}
+main {
+  width: 100%;
+}
+.welcome {
+  position: absolute;
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  font-weight: 900;
+  transition: all 3s ease;
+  opacity: 0;
+}
+section {
+  padding: 60px 20px 0 20px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  transition: all 1s ease;
+  opacity: 0;
+}
+.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+section:nth-child(odd) {
+  color: var(--main-color);
+  background-color: var(--main-bg-color);
+}
+section:nth-child(even) {
+  color: var(--invert-color);
+  background-color: var(--invert-bg-color);
+}
+
+#about-me {
+  display: flex;
+  align-items: center;
+}
+.profile-img {
+  width: 400px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-img img {
+  width: 100%;
+  /* max-width: 500px; */
+}
+.about-me {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  font-size: large;
+  line-height: 150%;
+  position: relative;
+}
+.about-me span {
+  font-size: larger;
+}
+.about-me h2 {
+  position: relative;
+  width: fit-content;
+  margin-bottom: 30px;
+  top: 20px;
+}
+@media screen and (max-width: 768px) {
+  #about-me {
+    flex-direction: column;
+  }
+  .about-me {
+    width: 100%;
+  }
+  .profile-img {
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+  }
+  section {
+    padding: 60px 0 0 0;
+  }
+}
+.title {
+  width: fit-content;
+  padding: 10px;
+  background-color: var(--invert-bg-color);
+  color: var(--invert-color);
+  border: 1px solid black;
+}
+/* h2 {
+  position: absolute;
+  top: 20px;
+} */
+#resume,
+#projects,
+#contacts {
+  flex-direction: column;
+}
+
+.resume-sub-sections {
+  padding: 20px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  box-shadow: 10px 10px 15px -5px;
+}
+.section-wraper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 10px;
+}
+.section-wraper h3,
+.section-wraper h4,
+.section-wraper p {
+  margin: 10px 0 5px 0;
+}
+.section-wraper h4 {
+  border-bottom: 1px solid;
+}
+.section-wraper ul {
+  padding-left: 20px;
+}
+.project-img {
+  width: 170px;
+
+  opacity: 0.6;
+}
+.project-item {
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 15px -5px white;
+}
+
+.project-item:hover img {
+  opacity: 1;
+}
+#contacts {
+  height: calc(100vh - 70px);
+}
+.contacts-wraper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  gap: 30px;
+  font-size: xx-large;
+  padding-left: 40px;
+}
+.contact-item {
+  width: fit-content;
+  padding: 10px;
+  box-shadow: inset 0 0 0 0;
+  transition: box-shadow 0.4s linear;
+}
+.contact-item:hover {
+  color: white;
+  box-shadow: inset 900px 0 0 0 rgb(0, 0, 0) !important;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background-color: var(--main-bg-color);
+}
