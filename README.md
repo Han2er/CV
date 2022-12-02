@@ -1,1 +1,3 @@
-# [Landing Page](https://han2er.github.io/CV/)
+# My CV
+
+[Deploy link](https://han2er.github.io/CV/)
